@@ -48,14 +48,11 @@ router.post('/transfer', function(req, res) {
               value: web3.utils.toWei(req.body.value),
               gas: gasTransfer,
               gasPrice: gasTransferPrice
-            }, (err, hash) => {
+            }, (err, txhash) => {
               if (!err) {
-                var receipt = web3.eth.getTransactionReceipt(hash).then((obj) => {
-                  res.json({error: err, result: obj}); 
-                  
-                });
+                res.json({error: err, result: txhash});
               } else {
-                res.json({error: err, result: hash}); 
+                res.json({error: err, result: txhash}); 
               }
             });
 
@@ -71,8 +68,13 @@ router.post('/transfer', function(req, res) {
   
   
     });
-    
 
+});
+
+router.post('/get_txinfo', function(req, res) {
+  var receipt = web3.eth.getTransaction(req.body.txhash).then((obj) => {
+    res.json({result: obj});
+  });
 });
 
 module.exports = router;

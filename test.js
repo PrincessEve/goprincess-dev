@@ -42,52 +42,86 @@ child.stdout.on('data', _ => {
     // });
     
     test('get balance', (t) => {
-        t.plan(2);
+        t.plan(4);
         var options = {
             url: 'http://127.0.0.1:8080/api/get_balance',
             method: 'POST',
             json: {
-                address:'0xe66bad68da780db435c022c5f8d98a3c9e3634b0'
+                address:'0xa7a0f8b943415b48e0dbf35ec55ef2fb26b41845'
             }
         }
+        var addr1 = options.json.address;
         request(options, function(err, response, body) {
             t.false(err);
             //t.false(body.errorint);
             t.equal(response.statusCode, 200);
-
+            console.log('address:' , addr1);
             console.log('body:' , body);
             console.log('err:', err);
         });
-    });
-    
-    test('transfer balance', (t) => {
-        t.plan(2);
-        var options = {
-            url: 'http://127.0.0.1:8080/api/transfer',
+        options = {
+            url: 'http://127.0.0.1:8080/api/get_balance',
             method: 'POST',
             json: {
-                from: '0xd9fc0b20e847fef123c4e6840984de1f60cf9b8f',
-                pwd: "12345",
-                to: '0xe66bad68da780db435c022c5f8d98a3c9e3634b0',
-                value: '100'
+                address:'0xA4d1EB2E98B4fA139973278570c4076794242feB'
             }
-            // json: {
-            //     from: '0xe66bad68da780db435c022c5f8d98a3c9e3634b0',
-                            //pwd: "12345",
-            //     to: '0xd9fc0b20e847fef123c4e6840984de1f60cf9b8f',
-            //     value: '10'
-            // }
         }
+        var addr2 = options.json.address;
         request(options, function(err, response, body) {
             t.false(err);
+            //t.false(body.errorint);
             t.equal(response.statusCode, 200);
-
+            console.log('address:' , addr2);
             console.log('body:' , body);
             console.log('err:', err);
         });
     });
     
+    // test('transfer balance', (t) => {
+    //     t.plan(2);
+    //     var options = {
+    //         url: 'http://127.0.0.1:8080/api/transfer',
+    //         method: 'POST',
+    //         json: {
+    //             from: '0xa7a0f8b943415b48e0dbf35ec55ef2fb26b41845',
+    //             pwd: "12345",
+    //             to: '0xA4d1EB2E98B4fA139973278570c4076794242feB',
+    //             value: '100'
+    //         }
+    //         // json: {
+    //         //     from: '0xA4d1EB2E98B4fA139973278570c4076794242feB',
+    //                         //pwd: "12345",
+    //         //     to: '0xa7a0f8b943415b48e0dbf35ec55ef2fb26b41845',
+    //         //     value: '100'
+    //         // }
+    //     }
+    //     request(options, function(err, response, body) {
+    //         t.false(err);
+    //         t.equal(response.statusCode, 200);
+
+    //         console.log('body:' , body);
+    //         console.log('err:', err);
+    //     });
+    // });
     
+    
+    test('get txinfo', (t) => {
+        t.plan(2);
+        var options = {
+            url: 'http://127.0.0.1:8080/api/get_txinfo',
+            method: 'POST',
+            json: {
+                txhash:'0x9809a8d1d1a7b501f2c3e712b92f29e1f6e68d8246fb535820f3866e1c553a93'
+            }
+        };
+        request(options, function(err, response, body) {
+            t.false(err);
+            //t.false(body.errorint);
+            t.equal(response.statusCode, 200);
+            console.log('body:' , body);
+            console.log('err:', err);
+        });
+    });
     
 });
 //child.kill();
