@@ -1,0 +1,8 @@
+web3.fromWei(eth.getBalance(eth.accounts[0]).toNumber(), 'ether')
+
+personal.unlockAccount("0xe66bad68da780db435c022c5f8d98a3c9e3634b0")
+
+eth.sendTransaction({from:eth.accounts[0], to:eth.accounts[1], value: web3.toWei(10, "ether"), gas: 21000, gasPrice: web3.toWei(40,'gwei')})
+
+curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1994}' --url http://127.0.0.1:8565 -H "Content-Type: application/json"
+

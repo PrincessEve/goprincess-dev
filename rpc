@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#../geth --datadir /home/princesseve/workspace/dev/datadir attach ipc:/home/princesseve/workspace/dev/datadir/geth.ipc console
+
+../geth attach http://127.0.0.1:8565 console

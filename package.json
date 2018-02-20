@@ -1,0 +1,31 @@
+{
+  "name": "goprincess-dev",
+  "version": "0.0.1",
+  "description": "goprincess dev ",
+  "web3": "^0.20.5",
+  "engines": {
+    "node": "6.11.5"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "test1": "node app/test1",
+    "test2": "node app/test2"
+  },
+  "author": "PrincessEve",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^6.0.0",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jayson": "^2.0.5",
+    "serve-favicon": "^2.4.5",
+    "web3": "^1.0.0-beta.30"
+  },
+  "devDependencies": {
+    "request": "^2.83.0",
+    "tape": "^4.9.0"
+  }
+}

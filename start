@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#../geth init --datadir /home/princesseve/workspace/goprincess-dev/datadir genesis.json
+
+#v1.7
+#../geth --datadir /home/princesseve/workspace/goprincess-dev/datadir -verbosity 5 --networkid 666 --cache 1024 --nodiscover
+#../geth --mine --minerthreads 1 --etherbase 0xe66bad68da780db435c022c5f8d98a3c9e3634b0 --nousb --datadir /home/princesseve/workspace/goprincess-dev/datadir -verbosity 5 --rpc --rpcaddr 127.0.0.1 --rpcport 8565 --rpccorsdomain "http://192.168.56.101:8081" --networkid 666 --cache 1024 --nodiscover dumpconfig > testconfig.toml
+#../geth --config testconfig.toml --mine
+
+#v1.8
+#../geth --datadir /home/princesseve/workspace/goprincess-dev/datadir -verbosity 5 --networkid 666 --cache 1024 --nodiscover --syncmode "full" --gcmode "archive"
+#../geth --mine --minerthreads 1 --etherbase 0xe66bad68da780db435c022c5f8d98a3c9e3634b0 --nousb --datadir /home/princesseve/workspace/goprincess-dev/datadir -verbosity 5 --rpc --rpcaddr 127.0.0.1 --rpcport 8565 --rpccorsdomain "http://192.168.56.101:8081" --networkid 666 --cache 1024 --nodiscover --syncmode "full" --gcmode "archive" dumpconfig > testconfig.toml
+
+../geth --config testconfig.toml --mine --gcmode "archive"
+
+#--noVMErrorsOnRPCResponse
+

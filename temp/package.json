@@ -1,0 +1,53 @@
+{
+  "name": "cc",
+  "version": "0.0.1",
+  "description": "cc",
+  "engines": {
+    "node": "6.11.4"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "DEBUG=express:* node server.js",
+    "test": "mocha --recursive test",
+    "start-prod": "NODE_ENV=production node server.js",
+    "trace-sync": "DEBUG=express:* node --trace-sync-io server.js",
+    "with-pg": "DEBUG=express:* DATABASE_URL=postgres://ubuntu@localhost:5432/oauth2 node server.js",
+    "cluster": "node cluster.js",
+    "pg": "sudo service postgresql start",
+    "sass": "node-sass sass -o public/css",
+    "sass-watch": "node-sass --watch sass -o public/css",
+    "build": "npm run build-sass && npm test",
+    "startw": "set DEBUG=express:*&&node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://hyeri0609@vs-ssh.visualstudio.com:22/_ssh/cc"
+  },
+  "author": "HYERI0609",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "compression": "^1.7.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "formidable": "^1.1.1",
+    "i18n": "^0.8.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^7.3.2",
+    "redux": "^3.7.2",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "node-sass": "^4.7.2",
+    "request": "^2.83.0",
+    "should": "^13.1.3",
+    "sinon": "^4.1.2",
+    "supertest": "^3.0.0"
+  }
+}
