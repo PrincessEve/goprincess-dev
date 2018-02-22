@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "node test.js",
+    "testgn": "node testgn.js",
     "test1": "node app/test1",
     "test2": "node app/test2"
   },
